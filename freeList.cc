@@ -8,7 +8,6 @@ freeList::freeList( long int*inRAM, int size ) {
 
 long int*
 freeList::reserve_space( int size ) {
-  long int* loc = NULL;
   if (size + 2 > head[0]) {
     return NULL; 
   }
