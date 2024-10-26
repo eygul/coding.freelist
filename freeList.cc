@@ -3,7 +3,7 @@
 freeList::freeList( long int*inRAM, int size ) {
   head = inRAM;
   head[0] = size - 2;
-  head[1] = 0;
+  head[1] = NULL;
 }
 
 long int*
@@ -15,6 +15,9 @@ freeList::reserve_space( int size ) {
 
 void
 freeList::free_space( long int* location ) {
+  long int* prev = head;
+  head = location - 2;
+  head[1] = (long int)prev;
 }
 
 void
