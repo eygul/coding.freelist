@@ -41,7 +41,6 @@ freeList::coalesce_forward() {
     }
   }
 }
-}
 
 // print() is given to you. It traverses the free list and prints out what is there.
 void freeList::print() {
