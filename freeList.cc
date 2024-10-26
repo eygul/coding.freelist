@@ -3,7 +3,7 @@
 freeList::freeList( long int*inRAM, int size ) {
   head = inRAM;
   head[0] = size - 2;
-  head[1] = NULL;
+  head[1] = 0;
 }
 
 long int*
