@@ -30,6 +30,17 @@ freeList::free_space( long int* location ) {
 
 void
 freeList::coalesce_forward() {
+  long int* traveling_point = head;
+  while (traveling_point != NULL && (long int*)traveling_point[1] != NULL) {
+    long int* next_block = (long int*)traveling_point[1];
+    if (next_block == traveling_point + traveling_point[0] + 2) {
+      traveling_point[0] += next_block[0] + 2; 
+      traveling_point[1] = next_block[1];      
+    } else {
+      traveling_point = next_block;
+    }
+  }
+}
 }
 
 // print() is given to you. It traverses the free list and prints out what is there.
