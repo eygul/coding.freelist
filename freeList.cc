@@ -17,6 +17,7 @@ void
 freeList::free_space( long int* location ) {
   long int* prev = head;
   head = location - 2;
+  
   head[1] = (long int)prev;
 }
 
